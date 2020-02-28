@@ -1,0 +1,32 @@
+.HomeMobile {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5% 37% auto 15% 10% 5%;
+  grid-template-areas:
+  "."
+   "main"
+   "."
+   "scroll"
+   "footer"
+   ".";
+  grid-row-gap: .25rem;
+  max-width: 768px;
+
+
+
+  .scrollBar {
+    grid-area: scroll;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .footer { 
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+  }
+}
+

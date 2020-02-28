@@ -1,0 +1,31 @@
+.ScrollBar {
+  height: 100%;
+  max-width: 175px;
+  display: grid;
+  grid-template-rows: 10% 40% 40% 10%;
+  grid-template-areas:
+    "."
+    "upArrow"
+    "downArrow"
+    ".";
+    grid-row-gap: .25rem;
+    justify-items: center;
+
+  .upArrow {
+    grid-area: upArrow;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .downArrow {
+    grid-area: downArrow;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

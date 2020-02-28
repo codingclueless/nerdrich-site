@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+:root {
+  color: var(--color-main);
+  background-color: black;
+  --h1-font: 'DM Sans', sans-serif;
+  --h3-font: 'Questrial', sans-serif;
+  --p-font: 'Questrial', sans-serif;
+  --color-opposite: #46344e;
+  --color-main: white;
+  --color-accent: #439F76;
+  --color-secondary: #F070A1;
+  --color1-background:#16FFBD;
+
+  h1 {
+    font-family: var(--h1-font);
+  }
+
+  h3 {
+    font-family: var(--h3-font);
+  }
+
+  p {
+    font-family: var(--p-font);
+  }
+
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1% 10% auto 3%;
+  grid-template-areas:
+  "."
+  "nav"
+  "mainRoute"
+  ".";
+  
+
+  .nav {
+    grid-area: nav;
+    position: sticky;
+    position: -webkit-sticky;
+    top:0%;
+    z-index:2;
+ 
+  }
+
+  .mainRoute {
+    grid-area: mainRoute;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    max-width: 768px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+    grid-template-areas:
+    "nav"
+    "mainRoute";
+    
+  
+    .nav {
+      grid-area: nav;
+    }
+  
+    .mainRoute {
+      grid-area: mainRoute;
+      
+    }
+  }
+}
+

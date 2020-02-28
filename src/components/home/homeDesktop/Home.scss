@@ -1,0 +1,30 @@
+.Home {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1% 15% 10% auto 1%;
+  grid-template-rows: 1% auto 15% 1%;
+  grid-template-areas:
+    ". . . . ."
+    ". scroll main main ."
+    ". footer footer . ."
+    ". . . . .";
+    grid-row-gap: .25rem;
+    grid-column-gap: .25rem;
+
+
+  .scrollBar {
+    grid-area: scroll;
+  }
+
+  .main {
+    grid-area: main;
+
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}
+
+

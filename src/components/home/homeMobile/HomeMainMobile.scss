@@ -1,0 +1,79 @@
+.HomeMainMobile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3%;
+
+  .title {
+    margin: 0;
+    font-size: calc(.7rem + 1vw);
+  }
+
+  .name {
+    display: flex;
+
+    h1 {
+      color: var(--color-main);
+      margin: 0;
+      margin-bottom: 8px;
+      font-size: 8vw;
+      letter-spacing: 2px;
+    }
+
+    .number {
+      margin-top: 0;
+    }
+
+  }
+
+  .paragraph {
+    width: 90%;
+    font-size: calc(.4rem + 1vw);
+    letter-spacing: .2px;
+    font-weight: bold;
+  }
+
+  .link {
+
+    align-items: center;
+    text-decoration: none;
+    color: white;
+  }
+}  
+
+.bg1 {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../Assets/me-unicorn.png') no-repeat center center;
+  background-size: cover; 
+}
+
+.bg2 {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 0;
+  right: 5%;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../Assets/bob.png') no-repeat center center;
+  background-size: contain; 
+}
+
+.bg0 {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 0;
+  right: 5%;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../Assets/bidUp.png') no-repeat center center;
+  background-size: contain; 
+}
+
+
+
