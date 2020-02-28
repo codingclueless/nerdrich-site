@@ -52,7 +52,7 @@ const Contact = () => {
             <a className='sendIt' href="mailto:wesgriffincodes@gmail.com?Subject=send%20it" target="_top"> WesGriffinCodes@gmail.com</a>
           </p>
         </animated.div>
-        <animated.form style={rightAnimated} onSubmit={handleSubmit} className='form'>
+        <animated.form style={rightAnimated} onSubmit={handleSubmit} className='form' name="contact" netlify>
           <div>
             <h3>Name</h3>
             <input type="text" name="name" placeholder='enter your name' value={name} onChange={(e) => setName(e.target.value)} required/>
