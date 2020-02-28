@@ -3,12 +3,6 @@ import './Contact.scss';
 import Footer from '../footer/Footer';
 import { useSpring, animated } from 'react-spring';
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
 const Contact = () => {
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
@@ -17,11 +11,21 @@ const Contact = () => {
   // const [setSent] = useState(false);
   // const [buttonText, setButtonText] = useState('Submit');
 
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k)=>{
+      formData.append(k, data[k]);
+    });
+    return formData;
+  };
+
   const handleSubmit = e => {
+    const data = { 'form-name': 'contact', name, subject, email, message };
+
+
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', name, subject, email, message })
+      body: encode(data)
     })
       .then(() => alert('Success!'))
       .catch(error => alert(error));
@@ -52,7 +56,7 @@ const Contact = () => {
             <a className='sendIt' href="mailto:wesgriffincodes@gmail.com?Subject=send%20it" target="_top"> WesGriffinCodes@gmail.com</a>
           </p>
         </animated.div>
-        <animated.form style={rightAnimated} onSubmit={handleSubmit} className='form' name="contact" netlify>
+        <animated.form style={rightAnimated} onSubmit={handleSubmit} className='form'>
           <div>
             <h3>Name</h3>
             <input type="text" name="name" placeholder='enter your name' value={name} onChange={(e) => setName(e.target.value)} required/>
