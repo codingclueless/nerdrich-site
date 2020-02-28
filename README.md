@@ -1,7 +1,7 @@
 ## WesGriffin.io 
 
-Personal site built completely in React. 
+Personal site built completely in React! 
 
-[WesGriffin.io](https://wesgriffin.io) 
+[WesGriffin.io](https://wesgriffin.io)
 
 
