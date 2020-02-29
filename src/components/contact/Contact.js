@@ -36,7 +36,7 @@ const Contact = () => {
     setSubject('');
     setEmail('');
     setMessage('');
-    setButtonText('Message Sent..');
+    setButtonText('Message Sent...');
 
     setTimeout(function() {
       setButtonText('Submit');
