@@ -8,8 +8,7 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  // const [setSent] = useState(false);
-  // const [buttonText, setButtonText] = useState('Submit');
+  const [buttonText, setButtonText] = useState('Submit');
 
   const encode = (data) => {
     const formData = new FormData();
@@ -20,29 +19,29 @@ const Contact = () => {
   };
 
   const handleSubmit = e => {
-    const data = { 'form-name': 'contact', name, subject, email, message };
+    e.preventDefault();
 
+    const data = { 'form-name': 'contact', name, subject, email, message };
 
     fetch('/', {
       method: 'POST',
       body: encode(data)
     })
-      .then(() => alert('Success!'))
+      .then(() => resetForm())
       .catch(error => alert(error));
-
-    e.preventDefault();
   };
 
-  
+  const resetForm = () => {
+    setName('');
+    setSubject('');
+    setEmail('');
+    setMessage('');
+    setButtonText('Message Sent...');
 
-
-  // const resetForm = () => {
-  //   setName('');
-  //   setSubject('');
-  //   setEmail('');
-  //   setMessage('');
-  //   setButtonText('Message Sent');
-  // };
+    setTimeout(function() {
+      setButtonText('Submit');
+    }, 3000);
+  };
 
   const rightAnimated = useSpring({ from: { opacity: 0, transform: 'translateY(200px)' }, opacity: 1, transition: '1.5s ease-out', transform: 'translateY(0px)' });
   const leftAnimated = useSpring({ from: { opacity: 0, transform: 'translateY(-250px)' }, opacity: 1, transition: '1.5s ease-out', transform: 'translateY(0px)' });
@@ -73,7 +72,7 @@ const Contact = () => {
             <h3>Message</h3>
             <textarea className="message" placeholder='send me something' type="textarea" name="message" value={message} onChange={(e) => setMessage(e.target.value)} required/>
           </div>
-          <button className='button' type="submit"><h3>Submit</h3></button>
+          <button className='button' type="submit"><h3>{buttonText}</h3></button>
         </animated.form>
       </div>
       <div className='footer'>
