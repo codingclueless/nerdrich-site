@@ -10,7 +10,7 @@ const MenuMobile = ({ open }) => {
   const slideIn = (open ?  { transform: 'translateX(0)' } : { transform: 'translateX(103%)' });
 
   return (
-    <nav className='Menu' style={slideIn}>
+    <nav className='MenuMobile' style={slideIn}>
       <Link className='link' to="/">
         <FaHome/>
         <p>Home</p>
