@@ -18,6 +18,9 @@ export const projects = [
     arrowLink: 'route',
     arrowOnClick: 'https://github.com/happy-trees/happy-trees',
     arrowText: 'PROJECT GITHUB',
+    arrow2Link: 'route',
+    arrow2OnClick: 'https://happy-trees.netlify.com/',
+    arrow2Text: 'DEMO',
     id: 2,
   },
   {
@@ -30,6 +33,9 @@ export const projects = [
     arrowLink: 'route',
     arrowOnClick: 'https://github.com/bid-up/BidUp',
     arrowText: 'PROJECT GITHUB',
+    arrow2Link: 'route',
+    arrow2OnClick: 'https://biduponline.com/',
+    arrow2Text: 'DEMO',
     id: 0,
   },
 
