@@ -14,16 +14,6 @@ const HomeMain = ({ project, upCount }) => {
   const bgSpring = useSpring({ from: { opacity: 0, transform: 'translateY(-250px)' }, opacity: 1, transition: '1.5s ease-out', transform: 'translateY(0px)' });
   const bgClass = (upCount === 2 ? 'bg1' : upCount === 0 ? 'bg2' : 'bg0');
 
-  const demo = (
-    <Link to={project.arrow2Link} 
-      onClick={project.arrow2Link === 'route' ? (e) => 
-      {e.preventDefault(); window.open(project.arrow2OnClick);} : ''}
-      className='link'>
-      <Arrow text={project.arrow2Text} />
-    </Link>
-  );
-  const noDemo = (project.id === 1 ? '' : demo);
-
   return (
     <>
       <animated.div style={mainSpring} className='HomeMain'>
@@ -35,7 +25,12 @@ const HomeMain = ({ project, upCount }) => {
         <p className='paragraph'>
           {project.paragraph}
         </p>
-        {noDemo}
+        <Link to={project.arrow2Link} 
+          onClick={project.arrow2Link === 'route' ? (e) => 
+          {e.preventDefault(); window.open(project.arrow2OnClick);} : ''}
+          className='link'>
+          <Arrow text={project.arrow2Text} />
+        </Link>
         <Link to={project.arrowLink} 
           onClick={project.arrowLink === 'route' ? (e) => 
           {e.preventDefault(); window.open(project.arrowOnClick);} : ''}

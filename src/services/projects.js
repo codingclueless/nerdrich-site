@@ -8,6 +8,9 @@ export const projects = [
     arrowLink: '/about',
     arrowOnClick: '',
     arrowText: 'MORE ABOUT ME',
+    arrow2Link: '/resume',
+    arrow2OnClick: '',
+    arrow2Text: 'RESUME',
     id: 1
   },
   {
